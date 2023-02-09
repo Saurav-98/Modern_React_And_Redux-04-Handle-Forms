@@ -5,13 +5,11 @@ const BookCreate = ({ onTitleSubmit }) => {
   const [title, setTitle] = useState("");
 
   const titleChangeHandler = (e) => {
-    console.log(e.target.value);
     setTitle(e.target.value);
   };
 
   const titleSubmitHandler = (e) => {
     e.preventDefault();
-    console.log("The Book Title is ", title);
     const newBook = { id: Math.floor(Math.random() * 123456), title };
     onTitleSubmit(newBook);
     setTitle("");
@@ -20,7 +18,7 @@ const BookCreate = ({ onTitleSubmit }) => {
   return (
     <div className="book-create">
       <h2>Add a Book</h2>
-      <form onSubmit={titleSubmitHandler}>
+      <form className="book-create__form" onSubmit={titleSubmitHandler}>
         <label htmlFor="title">Title</label>
         <input
           type="text"

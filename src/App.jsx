@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import BookCreate from "./components/BookCreate";
 import "./App.css";
+import BookList from "./components/BookList";
 const App = () => {
   const [books, setBooks] = useState([
     { id: 1, title: "The Lord Of The Rings" },
@@ -13,11 +14,29 @@ const App = () => {
   const addBook = (book) => {
     setBooks((prev) => [...prev, book]);
   };
+
+  const deleteBook = (id) => {
+    const updatedBooks = books.filter((book) => book.id !== id);
+    setBooks(updatedBooks);
+  };
+
+  const editBook = (id, newTitle) => {
+    const updatedBooks = books.map((book) => {
+      if (book.id === id) {
+        return { ...book, title: newTitle };
+      } else {
+        return book;
+      }
+    });
+    setBooks(updatedBooks);
+  };
   return (
     <div>
-      {books.map((book) => {
-        return <h4 key={book.id}>{book.title}</h4>;
-      })}
+      <BookList
+        books={books}
+        onDeleteHandle={deleteBook}
+        onEditHandle={editBook}
+      />
       <BookCreate onTitleSubmit={addBook} />
     </div>
   );

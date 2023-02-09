@@ -1,9 +1,9 @@
 .book-create {
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0;
-  height: 40vh;
-  background-color: aquamarine;
+  height: 30vh;
+  background-color: #8effd8;
   padding: 2rem;
 }
 .book-create h2 {
@@ -13,11 +13,38 @@
   padding-bottom: 0.2rem;
 }
 
-.book-create form {
+.book-create__form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin: 1rem 0;
   gap: 0.5rem;
+}
+
+.book-create__form label {
   color: #00361a;
+  font-weight: bold;
+}
+
+.book-create__form input {
+  padding: 0.2rem;
+  border: none;
+  border-radius: 0.2rem;
+}
+.book-create__form button {
+  padding: 0.3rem 1rem;
+  color: #00361a;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 0.2rem;
+  border: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.25s all ease;
+}
+.book-create__form button:hover {
+  color: #002605;
+  border-color: #84968f;
+  background-color: #cbffeb;
 }
