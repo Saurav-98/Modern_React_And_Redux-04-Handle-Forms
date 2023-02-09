@@ -1,0 +1,23 @@
+.book-create {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 40vh;
+  background-color: aquamarine;
+  padding: 2rem;
+}
+.book-create h2 {
+  color: #e59465;
+  border-bottom: 2px solid #828b87;
+  width: max-content;
+  padding-bottom: 0.2rem;
+}
+
+.book-create form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1rem 0;
+  gap: 0.5rem;
+  color: #00361a;
+}
