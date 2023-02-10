@@ -1,7 +1,7 @@
 .book-create {
-  position: fixed;
+  position: absolute;
   right: 1rem;
-  top: 1rem;
+  top: 1.5rem;
   width: 40%;
   height: 30vh;
   background-color: #f5e561;

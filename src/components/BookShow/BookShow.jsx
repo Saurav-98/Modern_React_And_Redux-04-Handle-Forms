@@ -24,7 +24,7 @@ const BookShow = ({ book, onDeleteHandle, onEditHandle }) => {
   return (
     <div className="book-show">
       <div className="img-container">
-        <img src={`https://picsum.photos/seed/${id}/300/300`} alt="books" />
+        <img src={`https://picsum.photos/seed/${id}/300/200`} alt="books" />
       </div>
       <div className="book-show__btn-container">
         <button className="book-show__btn" onClick={handleDeleteClick}>
