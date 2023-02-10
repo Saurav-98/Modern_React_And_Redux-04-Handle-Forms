@@ -1,5 +1,6 @@
 import React from "react";
-import BookShow from "./BookShow";
+import "./BookList.css";
+import BookShow from "../BookShow/BookShow";
 
 const BookList = ({ books, onDeleteHandle, onEditHandle }) => {
   return (

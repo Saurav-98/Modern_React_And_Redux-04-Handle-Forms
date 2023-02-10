@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import BookCreate from "./components/BookCreate";
 import "./App.css";
-import BookList from "./components/BookList";
+import BookList from "./components/BookList/BookList";
+import BookCreate from "./components/BookCreate/BookCreate";
 const App = () => {
   const [books, setBooks] = useState([
     { id: 1, title: "The Lord Of The Rings" },
@@ -32,15 +32,15 @@ const App = () => {
   };
   return (
     <div>
+      <h1 className="primary-heading">Reading List</h1>
+
       <BookCreate onTitleSubmit={addBook} />
-      <div className="main-content">
-        <h1>Reading List</h1>
-        <BookList
-          books={books}
-          onDeleteHandle={deleteBook}
-          onEditHandle={editBook}
-        />
-      </div>
+
+      <BookList
+        books={books}
+        onDeleteHandle={deleteBook}
+        onEditHandle={editBook}
+      />
     </div>
   );
 };

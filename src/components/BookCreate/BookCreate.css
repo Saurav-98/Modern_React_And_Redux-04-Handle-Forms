@@ -1,0 +1,29 @@
+.book-create {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  width: 40%;
+  height: 30vh;
+  background-color: #f5e561;
+  padding: 2rem 5rem;
+  border-radius: 10px;
+  z-index: 100;
+  transition: 0.4s all ease-in;
+}
+.book-create:hover {
+  opacity: 0.8;
+}
+.book-create h2 {
+  color: #005477;
+  border-bottom: 2px solid #828b87;
+  width: max-content;
+  padding-bottom: 0.2rem;
+}
+
+.book-create__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1rem 0;
+  gap: 0.5rem;
+}

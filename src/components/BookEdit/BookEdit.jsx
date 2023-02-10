@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./BookEdit.css";
 const BookEdit = ({
   book,
 
@@ -11,16 +11,15 @@ const BookEdit = ({
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(updatedTitle);
-    // onEditHandle(book.id, updatedTitle);
-    // handleEditClick();
     handleEditSubmitTogether(book.id, updatedTitle);
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="book-edit">
       <label htmlFor="upDatedTitle">Title</label>
       <input type="text" value={updatedTitle} onChange={handleChange} />
-      <button type="submit">Save</button>
+      <button className="primary-btn" type="submit">
+        Save
+      </button>
     </form>
   );
 };

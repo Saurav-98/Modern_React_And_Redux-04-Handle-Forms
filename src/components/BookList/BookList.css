@@ -1,0 +1,8 @@
+.book-list {
+  background-color: #3ab4f2;
+  padding: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  border-top: 2px solid #f2df3a;
+}

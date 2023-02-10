@@ -6,52 +6,44 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #84968f;
+  background-color: #4da1c4;
 }
-.main-content {
-  padding: 2rem 4rem;
-}
-h1 {
-  /* padding-left: 4rem; */
-  color: #82f3cc;
-  border-bottom: 2px solid #e59465;
+
+.primary-heading {
+  color: #e6f2f7;
+  border-bottom: 2px solid #f2df3a;
   padding-bottom: 0.2rem;
+  padding-right: 4rem;
   width: max-content;
+  margin: 6rem;
 }
 
-.book-list {
-  padding: 2rem 4rem;
-  display: flex;
-  /* flex-direction: column; */
-  gap: 1rem;
-  flex-wrap: wrap;
-  background-color: #f6c4a9;
-  border-radius: 1rem;
-  margin-top: 2rem;
-}
-
-.book-show {
-  background-color: #fef5f0;
-  border-radius: 1rem;
-  color: #4bcfa6;
+.primary-btn {
+  padding: 0.3rem 1rem;
+  color: #00361a;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 0.2rem;
+  border: none;
   cursor: pointer;
-  border: 2px solid transparent;
-  transition: 0.3s all ease;
-  width: 20rem;
-  height: 20rem;
-  padding: 1rem;
-  overflow: hidden;
+  border: 1px solid transparent;
+  transition: 0.25s all ease;
 }
-.book-show__btn-container {
-}
-.book-show:hover {
-  background-color: #ebfff7;
-  border-color: #e59465;
+.primary-btn:hover {
+  color: #0c2430;
+  border-color: #113649;
+  background-color: #b0e1fa;
 }
 
-.book-show h3 {
-  transition: 1s transform ease;
+label {
+  color: #f6f6f6;
+  font-weight: bold;
 }
-.book-show h3:hover {
-  transform: scale(1.1);
+
+input {
+  padding: 5px;
+  border: none;
+  border-radius: 0.2rem;
+  color: #0c2430;
 }

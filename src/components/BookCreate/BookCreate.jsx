@@ -26,7 +26,9 @@ const BookCreate = ({ onTitleSubmit }) => {
           onChange={titleChangeHandler}
           value={title}
         />
-        <button type="submit">Submit</button>
+        <button className="primary-btn" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );
