@@ -12,16 +12,23 @@ const BookShow = ({ book, onDeleteHandle, onEditHandle }) => {
   const handleEditClick = () => {
     setShowEdit((prev) => !prev);
   };
+
+  const handleEditSubmitTogether = (id, newTitle) => {
+    onEditHandle(id, newTitle);
+    setShowEdit(false);
+  };
   return (
     <div className="book-show">
-      <button onClick={handleDeleteClick}>Delete</button>
-      <button onClick={handleEditClick}>Edit</button>
+      <img src={`https://picsum.photos/seed/${id}/200/300`} alt="books" />
+      <div className="book-show__btn-container">
+        <button onClick={handleDeleteClick}>Delete</button>
+        <button onClick={handleEditClick}>Edit</button>
+      </div>
 
       {showEdit ? (
         <BookEdit
-          onEditHandle={onEditHandle}
-          handleEditClick={handleEditClick}
           book={book}
+          handleEditSubmitTogether={handleEditSubmitTogether}
         />
       ) : (
         <h3>{title}</h3>

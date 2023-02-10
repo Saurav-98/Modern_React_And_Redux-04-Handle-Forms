@@ -32,12 +32,15 @@ const App = () => {
   };
   return (
     <div>
-      <BookList
-        books={books}
-        onDeleteHandle={deleteBook}
-        onEditHandle={editBook}
-      />
       <BookCreate onTitleSubmit={addBook} />
+      <div className="main-content">
+        <h1>Reading List</h1>
+        <BookList
+          books={books}
+          onDeleteHandle={deleteBook}
+          onEditHandle={editBook}
+        />
+      </div>
     </div>
   );
 };

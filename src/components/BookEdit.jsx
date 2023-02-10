@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
-const BookEdit = ({ book, onEditHandle, handleEditClick }) => {
+const BookEdit = ({
+  book,
+
+  handleEditSubmitTogether,
+}) => {
   const [updatedTitle, setUpdatedTitle] = useState(book.title);
   const handleChange = (event) => {
     setUpdatedTitle(event.target.value);
@@ -8,8 +12,9 @@ const BookEdit = ({ book, onEditHandle, handleEditClick }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(updatedTitle);
-    onEditHandle(book.id, updatedTitle);
-    handleEditClick();
+    // onEditHandle(book.id, updatedTitle);
+    // handleEditClick();
+    handleEditSubmitTogether(book.id, updatedTitle);
   };
   return (
     <form onSubmit={handleSubmit}>

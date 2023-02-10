@@ -1,10 +1,8 @@
 .book-create {
-  position: fixed;
   width: 100%;
-  bottom: 0;
   height: 30vh;
   background-color: #8effd8;
-  padding: 2rem;
+  padding: 2rem 5rem;
 }
 .book-create h2 {
   color: #e59465;
