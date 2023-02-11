@@ -1,0 +1,58 @@
+###
+
+# Get All Books
+
+GET http://localhost:3001/books HTTP/1.1
+Content-Type: application/json
+
+
+###
+
+# Create a Book
+
+POST http://localhost:3001/books HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "The Lord Of The Rings"
+}
+
+### 
+
+# Creating Second Book
+
+POST http://localhost:3001/books HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Harry Potter"
+}
+
+
+###
+
+# Update a Book
+PUT http://localhost:3001/books/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Harry Potter and the order of the Pheonix"
+}
+
+### 
+
+# Add Third Book
+
+POST http://localhost:3001/books HTTP/1.1
+Content-Type: application/json
+
+{
+    "title" : "Batman : The Dark Knight"
+}
+
+###
+
+# Delete a Book
+
+DELETE http://localhost:3001/books/1 HTTP/1.1
+Content-Type: application/json
