@@ -36,21 +36,43 @@ const App = () => {
     setBooks(upDatedBooks);
   };
 
-  const deleteBook = (id) => {
-    const updatedBooks = books.filter((book) => book.id !== id);
-    setBooks(updatedBooks);
+  const deleteBook = async (id) => {
+    // const updatedBooks = books.filter((book) => book.id !== id);
+    // setBooks(updatedBooks);
+
+    const response = await axios.delete(`http://localhost:3001/books/${id}`);
+
+    const upDatedBooks = books.filter((book) => book.id !== id);
+    setBooks(upDatedBooks);
+
+    // console.log(response);
   };
 
-  const editBook = (id, newTitle) => {
+  const editBook = async (id, newTitle) => {
+    // const updatedBooks = books.map((book) => {
+    //   if (book.id === id) {
+    //     return { ...book, title: newTitle };
+    //   } else {
+    //     return book;
+    //   }
+    // });
+    // setBooks(updatedBooks);
+
+    // console.log(id);
+    const response = await axios.put(`http://localhost:3001/books/${id}`, {
+      title: newTitle,
+    });
+
     const updatedBooks = books.map((book) => {
       if (book.id === id) {
-        return { ...book, title: newTitle };
+        return { ...book, ...response.data };
       } else {
         return book;
       }
     });
     setBooks(updatedBooks);
   };
+
   return (
     <div>
       <h1 className="primary-heading">Watch List</h1>
