@@ -1,18 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./App.css";
 import BookList from "./components/BookList/BookList";
 import BookCreate from "./components/BookCreate/BookCreate";
 const App = () => {
-  const [books, setBooks] = useState([
-    { id: 1, title: "The Lord Of The Rings" },
-    { id: 2, title: "The Little Prince" },
-    { id: 3, title: "Harry Potter and the Philosopher’s Stone" },
-    { id: 4, title: "The Hobbit" },
-    { id: 5, title: "The Dream Of The Red Chamber" },
-  ]);
+  // const [books, setBooks] = useState([
+  //   { id: 1, title: "The Lord Of The Rings" },
+  //   { id: 2, title: "The Little Prince" },
+  //   { id: 3, title: "Harry Potter and the Philosopher’s Stone" },
+  //   { id: 4, title: "The Hobbit" },
+  //   { id: 5, title: "The Dream Of The Red Chamber" },
+  // ]);
 
-  const addBook = (book) => {
-    setBooks((prev) => [...prev, book]);
+  // *************** Getting Books Data from Rest Server ***************
+
+  const [books, setBooks] = useState([]);
+
+  const fetchBooks = async () => {
+    const response = await axios.get("http://localhost:3001/books");
+    setBooks(response.data);
+  };
+
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
+  const addBook = async (title) => {
+    // setBooks((prev) => [...prev, book]);
+
+    const response = await axios.post("http://localhost:3001/books", {
+      title,
+    });
+    // console.log(response);
+    const upDatedBooks = [...books, response.data];
+    setBooks(upDatedBooks);
   };
 
   const deleteBook = (id) => {
@@ -32,7 +53,7 @@ const App = () => {
   };
   return (
     <div>
-      <h1 className="primary-heading">Reading List</h1>
+      <h1 className="primary-heading">Watch List</h1>
 
       <BookCreate onTitleSubmit={addBook} />
 

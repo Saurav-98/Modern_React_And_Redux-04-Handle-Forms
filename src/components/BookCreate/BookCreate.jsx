@@ -10,8 +10,8 @@ const BookCreate = ({ onTitleSubmit }) => {
 
   const titleSubmitHandler = (e) => {
     e.preventDefault();
-    const newBook = { id: Math.floor(Math.random() * 123456), title };
-    onTitleSubmit(newBook);
+    // const newBook = { id: Math.floor(Math.random() * 123456), title };
+    onTitleSubmit(title);
     setTitle("");
   };
 
