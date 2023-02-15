@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./BookList.css";
 import BookShow from "../BookShow/BookShow";
-
-import BooksContext from "../../context/books";
+import useBooksContext from "../../customHooks/useBooksContext";
 
 const BookList = () => {
-  const { books } = useContext(BooksContext);
+  const { books } = useBooksContext();
 
   return (
     <div className="book-list">

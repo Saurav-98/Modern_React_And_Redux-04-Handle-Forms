@@ -1,16 +1,17 @@
-import React, { useState, useContext } from "react";
-import BooksContext from "../../context/books";
+import React, { useState } from "react";
+
 import "./BookShow.css";
 import BookEdit from "../BookEdit/BookEdit";
 
 // import { MdDeleteForever, MdOutlineModeEdit } from "react-icons/md";
 import { TiDeleteOutline, TiPencil } from "react-icons/ti";
+import useBooksContext from "../../customHooks/useBooksContext";
 
 const BookShow = ({ book }) => {
   const [showEdit, setShowEdit] = useState(false);
   const { id, title } = book;
 
-  const { deleteBook } = useContext(BooksContext);
+  const { deleteBook } = useBooksContext();
 
   const handleDeleteClick = () => {
     deleteBook(id);
