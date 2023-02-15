@@ -4,20 +4,13 @@ import BookShow from "../BookShow/BookShow";
 
 import BooksContext from "../../context/books";
 
-const BookList = ({ books, onDeleteHandle, onEditHandle }) => {
-  const value = useContext(BooksContext);
-  // console.log(books);
-  // console.log(typeof books);
+const BookList = () => {
+  const { books } = useContext(BooksContext);
+
   return (
     <div className="book-list">
-      <h3>{value}</h3>
       {books.map((book) => (
-        <BookShow
-          key={book.id}
-          book={book}
-          onDeleteHandle={onDeleteHandle}
-          onEditHandle={onEditHandle}
-        />
+        <BookShow key={book.id} book={book} />
       ))}
     </div>
   );

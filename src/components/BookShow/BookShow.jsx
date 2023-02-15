@@ -1,26 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import BooksContext from "../../context/books";
 import "./BookShow.css";
 import BookEdit from "../BookEdit/BookEdit";
 
 // import { MdDeleteForever, MdOutlineModeEdit } from "react-icons/md";
 import { TiDeleteOutline, TiPencil } from "react-icons/ti";
 
-const BookShow = ({ book, onDeleteHandle, onEditHandle }) => {
+const BookShow = ({ book }) => {
   const [showEdit, setShowEdit] = useState(false);
   const { id, title } = book;
 
+  const { deleteBook } = useContext(BooksContext);
+
   const handleDeleteClick = () => {
-    onDeleteHandle(id);
+    deleteBook(id);
   };
 
   const handleEditClick = () => {
     setShowEdit((prev) => !prev);
   };
 
-  const handleEditSubmitTogether = (id, newTitle) => {
-    onEditHandle(id, newTitle);
-    setShowEdit(false);
-  };
   return (
     <div className="book-show">
       <div className="img-container">
@@ -39,10 +38,7 @@ const BookShow = ({ book, onDeleteHandle, onEditHandle }) => {
 
       <div className="edit-container">
         {showEdit ? (
-          <BookEdit
-            book={book}
-            handleEditSubmitTogether={handleEditSubmitTogether}
-          />
+          <BookEdit book={book} handleEditClick={handleEditClick} />
         ) : (
           <h3>{title}</h3>
         )}

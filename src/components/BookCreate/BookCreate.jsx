@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import BooksContext from "../../context/books";
 import "./BookCreate.css";
 
-const BookCreate = ({ onTitleSubmit }) => {
+const BookCreate = () => {
   const [title, setTitle] = useState("");
+  const { addBook } = useContext(BooksContext);
 
   const titleChangeHandler = (e) => {
     setTitle(e.target.value);
@@ -11,7 +13,7 @@ const BookCreate = ({ onTitleSubmit }) => {
   const titleSubmitHandler = (e) => {
     e.preventDefault();
     // const newBook = { id: Math.floor(Math.random() * 123456), title };
-    onTitleSubmit(title);
+    addBook(title);
     setTitle("");
   };
 
